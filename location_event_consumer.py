@@ -11,7 +11,7 @@ DB_NAME = os.environ["DB_NAME"]
 KAFKA_URL = os.environ["KAFKA_URL"]
 KAFKA_TOPIC = os.environ["KAFKA_TOPIC"]
 
-consumer = KafkaConsumer(KAFKA_TOPIC, bootstrap_servers=[KAFKA_URL])
+consumer = KafkaConsumer(KAFKA_TOPIC, bootstrap_servers=[KAFKA_URL],group_id=None,auto_offset_reset='earliest')
 
 
 def write_in_db(location):
